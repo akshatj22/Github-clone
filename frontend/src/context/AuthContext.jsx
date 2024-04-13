@@ -14,6 +14,7 @@ export const AuthContextProvider = ({ children }) => {
             try {
                 const res = await fetch('/api/auth/check',{credentials:'include'});
                 const data = await res.json();
+                console.log(data,"data")
                setAuthUser(data.user);
             } catch (error) {
                 toast.error(error.message);
